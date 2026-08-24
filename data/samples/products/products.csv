@@ -1,0 +1,201 @@
+product_id,product_name,category,subcategory,brand,list_price,unit_cost,is_active,updated_at
+SKU-00001,Umbrella Phones 0001,Electronics,Laptops,Globex,42.41,27.38,True,2026-01-09 00:00:00
+SKU-00002,Acme Phones 0002,Electronics,Wearables,Umbrella,132.17,88.86,True,2026-03-13 00:00:00
+SKU-00003,Wayne Audio 0003,Electronics,Audio,Initech,945.13,684.13,True,2026-07-15 00:00:00
+SKU-00004,Stark Cycling 0004,Sports,Cycling,Acme,-12.5,96.48,True,2026-05-18 00:00:00
+SKU-00005,Soylent Audio 0005,Electronics,Phones,Globex,1488.11,875.94,False,2026-02-28 00:00:00
+SKU-00006,Globex Team Sports 0006,Sports,Cycling,Tyrell,2119.57,886.77,True,2026-04-04 00:00:00
+SKU-00007,Soylent Kitchen 0007,Home,Furniture,Umbrella,488.92,336.31,True,2026-04-08 00:00:00
+SKU-00008,,Sports,Fitness,Umbrella,1850.71,890.62,True,2026-03-22 00:00:00
+SKU-00009,Stark Technical 0009,Books,Business,Wayne,356.16,244.63,True,2026-06-14 00:00:00
+SKU-00010,Soylent Business 0010,Books,Business,Stark,179.7,132.87,True,2026-02-05 00:00:00
+SKU-00011,Globex Womenswear 0011,Fashion,Womenswear,Wayne,1003.24,446.7,True,2026-04-09 00:00:00
+SKU-BAD,Soylent Fiction 0012,Books,Fiction,Soylent,984.41,538.32,True,2026-03-29 00:00:00
+SKU-00013,Acme Audio 0013,Electronics,Phones,Globex,369.22,267.68,True,2026-03-18 00:00:00
+SKU-00014,Initech Menswear 0014,Fashion,Footwear,Tyrell,754.43,550.03,False,2026-04-03 00:00:00
+SKU-00015,Globex Fitness 0015,Sports,Team Sports,Globex,328.8,219.31,True,2026-05-17 00:00:00
+SKU-00016,Initech Decor 0016,Home,Bedding,Umbrella,220.53,119.91,True,2026-07-13 00:00:00
+SKU-00017,Stark Bedding 0017,Home,Bedding,Globex,1111.61,643.09,True,2026-01-17 00:00:00
+SKU-00018,Umbrella Fitness 0018,Sports,Fitness,Acme,46.54,23.83,True,2026-01-09 00:00:00
+SKU-00019,Tyrell Outdoor 0019,Sports,Outdoor,Tyrell,102.3,68.42,True,2026-05-02 00:00:00
+SKU-00020,Wayne Children 0020,Books,Business,Wayne,226.39,175.42,True,2026-07-06 00:00:00
+SKU-00021,Globex Laptops 0021,Electronics,Wearables,Stark,1565.96,607.66,True,2026-01-28 00:00:00
+SKU-00022,Initech Bedding 0022,Home,Furniture,Soylent,340.17,176.47,True,2026-01-20 00:00:00
+SKU-00023,Globex Fiction 0023,Books,Fiction,Globex,1741.19,728.18,True,2026-03-02 00:00:00
+SKU-00024,Wayne Kitchen 0024,Home,Furniture,Wayne,681.42,368.74,False,2026-04-10 00:00:00
+SKU-00025,Soylent Team Sports 0025,Sports,Team Sports,Initech,1909.08,834.23,True,2026-02-25 00:00:00
+SKU-00026,Stark Laptops 0026,Electronics,Laptops,Tyrell,1013.34,523.37,True,2026-05-16 00:00:00
+SKU-00027,Initech Kitchen 0027,Home,Kitchen,Umbrella,105.47,55.91,True,2026-05-26 00:00:00
+SKU-00028,Globex Bedding 0028,Home,Decor,Soylent,631.75,523.13,True,2026-07-03 00:00:00
+SKU-00029,Soylent Team Sports 0029,Sports,Cycling,Globex,376.88,218.62,False,2026-06-09 00:00:00
+SKU-00030,Umbrella Footwear 0030,Fashion,Womenswear,Stark,1126.22,896.51,True,2026-03-04 00:00:00
+SKU-00031,Soylent Fitness 0031,Sports,Cycling,Globex,464.3,260.06,True,2026-02-04 00:00:00
+SKU-00032,Initech Cycling 0032,Sports,Cycling,Umbrella,141.37,108.31,True,2026-02-22 00:00:00
+SKU-00033,Acme Fitness 0033,Sports,Team Sports,Soylent,692.47,457.34,False,2026-03-27 00:00:00
+SKU-00034,Tyrell Bedding 0034,Home,Kitchen,Globex,879.99,575.22,False,2026-06-26 00:00:00
+SKU-00035,Initech Bedding 0035,Home,Furniture,Acme,1164.27,493.3,True,2026-01-11 00:00:00
+SKU-00036,Globex Cycling 0036,Sports,Team Sports,Initech,291.81,193.02,True,2026-03-02 00:00:00
+SKU-00037,Wayne Kitchen 0037,Home,Furniture,Stark,2043.52,878.7,True,2026-04-16 00:00:00
+SKU-00038,Globex Bedding 0038,Home,Kitchen,Tyrell,558.69,243.79,True,2026-04-28 00:00:00
+SKU-00039,Umbrella Outdoor 0039,Sports,Fitness,Umbrella,640.65,278.15,True,2026-03-13 00:00:00
+SKU-00040,Wayne Audio 0040,Electronics,Laptops,Globex,1353.19,870.37,True,2026-03-08 00:00:00
+SKU-00041,Acme Kitchen 0041,Home,Bedding,Stark,1351.52,524.63,True,2026-03-22 00:00:00
+SKU-00042,Wayne Technical 0042,Books,Children,Acme,1035.74,547.56,True,2026-01-01 00:00:00
+SKU-00043,Umbrella Footwear 0043,Fashion,Accessories,Globex,1609.07,833.39,True,2026-03-26 00:00:00
+SKU-00044,Soylent Footwear 0044,Fashion,Accessories,Stark,680.45,285.95,True,2026-03-17 00:00:00
+SKU-00045,Wayne Womenswear 0045,Fashion,Footwear,Wayne,209.26,118.92,True,2026-01-01 00:00:00
+SKU-00046,Stark Team Sports 0046,Sports,Team Sports,Tyrell,464.24,261.79,True,2026-05-11 00:00:00
+SKU-00047,Initech Fiction 0047,Books,Children,Stark,1818.35,715.39,True,2026-07-12 00:00:00
+SKU-00048,Umbrella Furniture 0048,Home,Kitchen,Acme,895.99,607.15,True,2026-05-02 00:00:00
+SKU-00049,Wayne Womenswear 0049,Fashion,Accessories,Tyrell,961.19,765.52,True,2026-02-07 00:00:00
+SKU-00050,Globex Wearables 0050,Electronics,Phones,Initech,1927.53,803.93,True,2026-06-28 00:00:00
+SKU-00051,Globex Accessories 0051,Fashion,Womenswear,Tyrell,823.97,420.77,True,2026-05-24 00:00:00
+SKU-00052,Tyrell Accessories 0052,Fashion,Accessories,Initech,648.79,288.98,True,2026-05-02 00:00:00
+SKU-00053,Soylent Business 0053,Books,Technical,Soylent,357.48,236.98,True,2026-07-02 00:00:00
+SKU-00054,Globex Outdoor 0054,Sports,Outdoor,Umbrella,351.74,214.87,True,2026-02-09 00:00:00
+SKU-00055,Tyrell Bedding 0055,Home,Kitchen,Umbrella,108.78,62.48,True,2026-04-10 00:00:00
+SKU-00056,Wayne Accessories 0056,Fashion,Menswear,Stark,1003.61,851.73,True,2026-04-10 00:00:00
+SKU-00057,Umbrella Business 0057,Books,Technical,Soylent,1078.17,486.71,True,2026-01-08 00:00:00
+SKU-00058,Wayne Technical 0058,Books,Business,Initech,652.89,305.84,True,2026-05-17 00:00:00
+SKU-00059,Acme Laptops 0059,Electronics,Wearables,Initech,1640.13,816.7,True,2026-02-16 00:00:00
+SKU-00060,Tyrell Audio 0060,Electronics,Audio,Wayne,386.41,237.84,True,2026-04-18 00:00:00
+SKU-00061,Acme Cycling 0061,Sports,Outdoor,Globex,1378.08,752.25,True,2026-06-16 00:00:00
+SKU-00062,Umbrella Laptops 0062,Electronics,Phones,Umbrella,1718.42,680.04,True,2026-06-21 00:00:00
+SKU-00063,Soylent Audio 0063,Electronics,Phones,Globex,747.32,509.75,True,2026-02-11 00:00:00
+SKU-00064,Soylent Team Sports 0064,Sports,Team Sports,Umbrella,120.8,101.75,False,2026-06-26 00:00:00
+SKU-00065,Globex Kitchen 0065,Home,Decor,Wayne,218.38,96.2,True,2026-01-18 00:00:00
+SKU-00066,Wayne Accessories 0066,Fashion,Menswear,Wayne,682.96,584.55,True,2026-06-12 00:00:00
+SKU-00067,Soylent Business 0067,Books,Business,Wayne,1136.64,638.04,True,2026-06-01 00:00:00
+SKU-00068,Globex Cycling 0068,Sports,Team Sports,Umbrella,441.94,293.46,True,2026-05-26 00:00:00
+SKU-00069,Tyrell Footwear 0069,Fashion,Womenswear,Tyrell,987.63,603.03,True,2026-03-08 00:00:00
+SKU-00070,Soylent Fitness 0070,Sports,Outdoor,Globex,514.26,255.29,True,2026-04-15 00:00:00
+SKU-00071,Tyrell Business 0071,Books,Business,Acme,752.05,501.88,True,2026-02-26 00:00:00
+SKU-00072,Stark Business 0072,Books,Children,Wayne,994.89,624.15,True,2026-05-21 00:00:00
+SKU-00073,Soylent Cycling 0073,Sports,Outdoor,Globex,578.3,319.87,True,2026-03-22 00:00:00
+SKU-00074,Initech Phones 0074,Electronics,Phones,Tyrell,1693.97,669.88,True,2026-05-31 00:00:00
+SKU-00075,Umbrella Footwear 0075,Fashion,Womenswear,Stark,1386.5,539.13,True,2026-01-04 00:00:00
+SKU-00076,Acme Footwear 0076,Fashion,Womenswear,Tyrell,143.84,118.29,True,2026-01-04 00:00:00
+SKU-00077,Stark Womenswear 0077,Fashion,Menswear,Soylent,478.52,259.48,True,2026-05-03 00:00:00
+SKU-00078,Globex Laptops 0078,Electronics,Phones,Initech,1282.33,740.79,True,2026-03-19 00:00:00
+SKU-00079,Wayne Phones 0079,Electronics,Wearables,Tyrell,1182.39,894.56,True,2026-03-18 00:00:00
+SKU-00080,Acme Menswear 0080,Fashion,Womenswear,Umbrella,1419.31,891.08,True,2026-01-21 00:00:00
+SKU-00081,Initech Kitchen 0081,Home,Bedding,Tyrell,428.46,219.68,True,2026-05-01 00:00:00
+SKU-00082,Soylent Team Sports 0082,Sports,Fitness,Umbrella,53.63,34.21,True,2026-06-10 00:00:00
+SKU-00083,Wayne Menswear 0083,Fashion,Womenswear,Initech,1494.18,596.76,True,2026-02-06 00:00:00
+SKU-00084,Soylent Wearables 0084,Electronics,Laptops,Tyrell,134.23,58.38,True,2026-06-29 00:00:00
+SKU-00085,Tyrell Business 0085,Books,Fiction,Acme,1591.89,848.7,True,2026-07-08 00:00:00
+SKU-00086,Umbrella Fitness 0086,Sports,Cycling,Acme,647.57,545.32,True,2026-02-14 00:00:00
+SKU-00087,Soylent Technical 0087,Books,Business,Tyrell,840.93,469.47,True,2026-05-01 00:00:00
+SKU-00088,Globex Outdoor 0088,Sports,Cycling,Wayne,598.51,370.47,True,2026-03-15 00:00:00
+SKU-00089,Tyrell Fiction 0089,Books,Children,Soylent,1427.89,733.14,True,2026-07-17 00:00:00
+SKU-00090,Acme Business 0090,Books,Business,Acme,1827.86,779.09,True,2026-04-03 00:00:00
+SKU-00091,Acme Womenswear 0091,Fashion,Footwear,Initech,1402.81,682.02,True,2026-04-23 00:00:00
+SKU-00092,Umbrella Technical 0092,Books,Children,Acme,291.14,113.68,True,2026-01-24 00:00:00
+SKU-00093,Tyrell Kitchen 0093,Home,Furniture,Tyrell,2209.23,893.07,True,2026-03-16 00:00:00
+SKU-00094,Tyrell Accessories 0094,Fashion,Womenswear,Tyrell,1115.16,636.34,True,2026-04-09 00:00:00
+SKU-00095,Initech Kitchen 0095,Home,Decor,Wayne,1566.3,830.07,True,2026-05-10 00:00:00
+SKU-00096,Soylent Team Sports 0096,Sports,Outdoor,Tyrell,1153.53,739.39,True,2026-03-30 00:00:00
+SKU-00097,Tyrell Cycling 0097,Sports,Outdoor,Umbrella,966.99,498.97,True,2026-03-01 00:00:00
+SKU-00098,Wayne Business 0098,Books,Technical,Tyrell,98.25,44.06,True,2026-02-02 00:00:00
+SKU-00099,Globex Accessories 0099,Fashion,Menswear,Tyrell,1417.66,868.99,False,2026-02-06 00:00:00
+SKU-00100,Globex Business 0100,Books,Children,Stark,2005.5,784.49,True,2026-04-12 00:00:00
+SKU-00101,Wayne Audio 0101,Electronics,Wearables,Acme,1830.77,767.33,True,2026-03-02 00:00:00
+SKU-00102,Wayne Fitness 0102,Sports,Fitness,Tyrell,2004.39,897.7,True,2026-03-18 00:00:00
+SKU-00103,Soylent Audio 0103,Electronics,Audio,Wayne,106.37,46.16,True,2026-05-16 00:00:00
+SKU-00104,Initech Technical 0104,Books,Fiction,Wayne,1176.04,511.51,True,2026-03-03 00:00:00
+SKU-00105,Tyrell Children 0105,Books,Business,Soylent,1115.85,821.98,True,2026-04-30 00:00:00
+SKU-00106,Tyrell Cycling 0106,Sports,Cycling,Wayne,843.24,611.46,True,2026-04-27 00:00:00
+SKU-00107,Tyrell Fitness 0107,Sports,Outdoor,Wayne,313.04,183.3,True,2026-05-28 00:00:00
+SKU-00108,Wayne Cycling 0108,Sports,Fitness,Acme,1409.96,893.46,True,2026-07-10 00:00:00
+SKU-00109,Umbrella Children 0109,Books,Technical,Umbrella,1845.4,750.39,True,2026-06-23 00:00:00
+SKU-00110,Acme Decor 0110,Home,Bedding,Acme,1395.47,567.28,True,2026-07-07 00:00:00
+SKU-00111,Wayne Furniture 0111,Home,Furniture,Initech,135.18,85.67,True,2026-04-04 00:00:00
+SKU-00112,Initech Footwear 0112,Fashion,Accessories,Soylent,701.67,454.11,True,2026-03-28 00:00:00
+SKU-00113,Umbrella Wearables 0113,Electronics,Audio,Globex,534.1,424.16,True,2026-01-04 00:00:00
+SKU-00114,Soylent Team Sports 0114,Sports,Cycling,Globex,877.99,485.23,True,2026-05-01 00:00:00
+SKU-00115,Stark Phones 0115,Electronics,Laptops,Tyrell,1408.57,559.49,True,2026-03-19 00:00:00
+SKU-00116,Acme Children 0116,Books,Business,Globex,133.03,109.42,True,2026-05-18 00:00:00
+SKU-00117,Wayne Furniture 0117,Home,Bedding,Globex,595.58,352.84,True,2026-06-07 00:00:00
+SKU-00118,Stark Technical 0118,Books,Business,Tyrell,1315.2,845.45,True,2026-04-03 00:00:00
+SKU-00119,Stark Laptops 0119,Electronics,Wearables,Soylent,1485.65,882.93,True,2026-02-01 00:00:00
+SKU-00120,Acme Fiction 0120,Books,Children,Umbrella,126.88,87.05,True,2026-05-25 00:00:00
+SKU-00121,Umbrella Furniture 0121,Home,Furniture,Stark,150.05,66.41,True,2026-06-02 00:00:00
+SKU-00122,Initech Audio 0122,Electronics,Phones,Globex,652.35,253.16,True,2026-01-07 00:00:00
+SKU-00123,Umbrella Decor 0123,Home,Kitchen,Initech,42.01,18.3,True,2026-02-02 00:00:00
+SKU-00124,Tyrell Business 0124,Books,Children,Globex,1061.72,475.85,True,2026-02-26 00:00:00
+SKU-00125,Soylent Accessories 0125,Fashion,Menswear,Acme,100.14,43.81,True,2026-04-13 00:00:00
+SKU-00126,Tyrell Fiction 0126,Books,Fiction,Stark,1152.0,619.06,True,2026-01-17 00:00:00
+SKU-00127,Stark Bedding 0127,Home,Decor,Tyrell,519.35,251.14,True,2026-04-21 00:00:00
+SKU-00128,Umbrella Wearables 0128,Electronics,Wearables,Umbrella,940.63,714.82,True,2026-04-27 00:00:00
+SKU-00129,Wayne Children 0129,Books,Children,Stark,485.93,377.31,True,2026-06-25 00:00:00
+SKU-00130,Globex Business 0130,Books,Fiction,Stark,153.33,65.08,True,2026-05-23 00:00:00
+SKU-00131,Stark Laptops 0131,Electronics,Wearables,Stark,1040.86,529.89,True,2026-07-12 00:00:00
+SKU-00132,Soylent Children 0132,Books,Children,Globex,1716.78,781.94,True,2026-02-24 00:00:00
+SKU-00133,Globex Decor 0133,Home,Decor,Globex,874.44,592.78,True,2026-05-27 00:00:00
+SKU-00134,Acme Decor 0134,Home,Kitchen,Initech,1728.06,727.46,True,2026-07-15 00:00:00
+SKU-00135,Initech Outdoor 0135,Sports,Team Sports,Globex,1376.59,829.78,True,2026-06-12 00:00:00
+SKU-00136,Wayne Wearables 0136,Electronics,Wearables,Stark,167.2,87.12,True,2026-03-21 00:00:00
+SKU-00137,Globex Fitness 0137,Sports,Outdoor,Initech,1381.64,700.27,True,2026-01-13 00:00:00
+SKU-00138,Tyrell Wearables 0138,Electronics,Wearables,Soylent,524.35,248.53,True,2026-05-12 00:00:00
+SKU-00139,Tyrell Audio 0139,Electronics,Laptops,Umbrella,411.5,313.93,True,2026-06-03 00:00:00
+SKU-00140,Umbrella Phones 0140,Electronics,Audio,Soylent,18.85,11.88,True,2026-01-02 00:00:00
+SKU-00141,Wayne Technical 0141,Books,Children,Globex,946.22,673.58,True,2026-07-09 00:00:00
+SKU-00142,Globex Audio 0142,Electronics,Wearables,Wayne,718.34,395.42,True,2026-04-17 00:00:00
+SKU-00143,Stark Outdoor 0143,Sports,Team Sports,Stark,127.56,108.08,True,2026-01-28 00:00:00
+SKU-00144,Globex Bedding 0144,Home,Decor,Stark,683.49,394.93,True,2026-07-19 00:00:00
+SKU-00145,Umbrella Decor 0145,Home,Decor,Initech,151.72,73.36,True,2026-02-07 00:00:00
+SKU-00146,Globex Outdoor 0146,Sports,Team Sports,Tyrell,367.38,181.56,True,2026-07-14 00:00:00
+SKU-00147,Stark Footwear 0147,Fashion,Womenswear,Tyrell,1012.87,406.77,False,2026-04-24 00:00:00
+SKU-00148,Stark Fitness 0148,Sports,Cycling,Tyrell,1440.86,717.72,True,2026-01-15 00:00:00
+SKU-00149,Globex Team Sports 0149,Sports,Team Sports,Acme,945.15,749.37,True,2026-05-27 00:00:00
+SKU-00150,Initech Kitchen 0150,Home,Bedding,Globex,538.6,292.77,True,2026-03-29 00:00:00
+SKU-00151,Umbrella Wearables 0151,Electronics,Wearables,Initech,639.29,456.57,True,2026-03-14 00:00:00
+SKU-00152,Acme Children 0152,Books,Fiction,Stark,608.43,370.85,True,2026-06-23 00:00:00
+SKU-00153,Initech Children 0153,Books,Fiction,Initech,570.33,259.31,True,2026-03-21 00:00:00
+SKU-00154,Globex Children 0154,Books,Business,Stark,262.23,120.41,True,2026-06-21 00:00:00
+SKU-00155,Stark Menswear 0155,Fashion,Footwear,Soylent,188.11,88.64,True,2026-02-24 00:00:00
+SKU-00156,Umbrella Outdoor 0156,Sports,Outdoor,Globex,1582.69,853.16,True,2026-01-26 00:00:00
+SKU-00157,Acme Footwear 0157,Fashion,Womenswear,Wayne,1640.68,694.93,True,2026-02-16 00:00:00
+SKU-00158,Tyrell Menswear 0158,Fashion,Accessories,Stark,1013.46,729.09,True,2026-03-02 00:00:00
+SKU-00159,Tyrell Technical 0159,Books,Technical,Soylent,1235.85,551.48,True,2026-07-20 00:00:00
+SKU-00160,Tyrell Business 0160,Books,Children,Wayne,1165.18,814.06,True,2026-04-18 00:00:00
+SKU-00161,Initech Decor 0161,Home,Kitchen,Tyrell,1701.78,736.12,True,2026-05-22 00:00:00
+SKU-00162,Globex Audio 0162,Electronics,Laptops,Initech,1217.99,641.7,True,2026-05-12 00:00:00
+SKU-00163,Umbrella Bedding 0163,Home,Decor,Acme,960.69,748.79,True,2026-04-12 00:00:00
+SKU-00164,Globex Footwear 0164,Fashion,Womenswear,Acme,580.87,339.7,True,2026-01-26 00:00:00
+SKU-00165,Soylent Team Sports 0165,Sports,Outdoor,Tyrell,962.6,713.29,True,2026-01-02 00:00:00
+SKU-00166,Initech Wearables 0166,Electronics,Laptops,Soylent,32.19,22.01,True,2026-02-01 00:00:00
+SKU-00167,Tyrell Laptops 0167,Electronics,Laptops,Tyrell,453.5,218.4,True,2026-01-05 00:00:00
+SKU-00168,Soylent Accessories 0168,Fashion,Menswear,Stark,1139.06,519.67,True,2026-04-17 00:00:00
+SKU-00169,Stark Kitchen 0169,Home,Kitchen,Wayne,763.99,599.61,True,2026-01-12 00:00:00
+SKU-00170,Acme Children 0170,Books,Fiction,Stark,1340.26,883.03,True,2026-06-18 00:00:00
+SKU-00171,Stark Phones 0171,Electronics,Laptops,Stark,1541.22,695.49,True,2026-06-14 00:00:00
+SKU-00172,Tyrell Furniture 0172,Home,Furniture,Globex,1603.21,748.19,True,2026-04-28 00:00:00
+SKU-00173,Umbrella Laptops 0173,Electronics,Audio,Soylent,324.77,267.63,True,2026-05-20 00:00:00
+SKU-00174,Umbrella Children 0174,Books,Children,Acme,519.58,231.72,True,2026-03-26 00:00:00
+SKU-00175,Wayne Team Sports 0175,Sports,Team Sports,Stark,195.99,116.41,True,2026-05-08 00:00:00
+SKU-00176,Soylent Fiction 0176,Books,Business,Globex,769.72,333.78,True,2026-02-16 00:00:00
+SKU-00177,Stark Footwear 0177,Fashion,Footwear,Tyrell,347.97,267.92,True,2026-04-20 00:00:00
+SKU-00178,Acme Decor 0178,Home,Bedding,Soylent,1032.92,622.34,True,2026-01-15 00:00:00
+SKU-00179,Initech Laptops 0179,Electronics,Phones,Tyrell,1053.33,605.71,False,2026-01-18 00:00:00
+SKU-00180,Wayne Kitchen 0180,Home,Furniture,Tyrell,1179.8,701.77,True,2026-04-06 00:00:00
+SKU-00181,Stark Business 0181,Books,Children,Soylent,1363.67,687.96,True,2026-01-30 00:00:00
+SKU-00182,Wayne Laptops 0182,Electronics,Audio,Soylent,1243.01,663.43,True,2026-02-24 00:00:00
+SKU-00183,Tyrell Womenswear 0183,Fashion,Menswear,Initech,645.98,260.59,True,2026-04-26 00:00:00
+SKU-00184,Globex Decor 0184,Home,Decor,Globex,1453.06,809.32,True,2026-03-16 00:00:00
+SKU-00185,Initech Cycling 0185,Sports,Outdoor,Globex,1673.62,766.97,True,2026-02-05 00:00:00
+SKU-00186,Stark Bedding 0186,Home,Furniture,Globex,846.39,712.38,False,2026-04-12 00:00:00
+SKU-00187,Globex Technical 0187,Books,Children,Globex,1077.14,475.5,True,2026-06-24 00:00:00
+SKU-00188,Initech Womenswear 0188,Fashion,Accessories,Acme,759.24,313.34,True,2026-05-13 00:00:00
+SKU-00189,Umbrella Decor 0189,Home,Decor,Globex,383.87,277.19,True,2026-06-12 00:00:00
+SKU-00190,Globex Womenswear 0190,Fashion,Womenswear,Initech,515.37,250.63,True,2026-07-04 00:00:00
+SKU-00191,Acme Menswear 0191,Fashion,Menswear,Acme,764.76,307.17,True,2026-07-17 00:00:00
+SKU-00192,Wayne Menswear 0192,Fashion,Accessories,Soylent,352.08,241.87,True,2026-03-19 00:00:00
+SKU-00193,Wayne Children 0193,Books,Business,Globex,520.22,224.17,True,2026-02-10 00:00:00
+SKU-00194,Stark Technical 0194,Books,Children,Stark,687.4,376.98,True,2026-03-30 00:00:00
+SKU-00195,Globex Children 0195,Books,Technical,Tyrell,205.92,122.04,True,2026-04-26 00:00:00
+SKU-00196,Wayne Bedding 0196,Home,Furniture,Initech,160.37,131.09,True,2026-05-28 00:00:00
+SKU-00197,Tyrell Team Sports 0197,Sports,Cycling,Tyrell,241.55,174.9,False,2026-04-11 00:00:00
+SKU-00198,Stark Menswear 0198,Fashion,Menswear,Soylent,620.94,414.22,True,2026-06-17 00:00:00
+SKU-00199,Globex Business 0199,Books,Technical,Soylent,302.94,260.74,True,2026-07-15 00:00:00
+SKU-00200,Umbrella Children 0200,Books,Children,Globex,575.52,332.51,True,2026-04-26 00:00:00

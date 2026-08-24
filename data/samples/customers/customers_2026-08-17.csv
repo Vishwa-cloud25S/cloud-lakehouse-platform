@@ -1,0 +1,41 @@
+customer_id,full_name,email,phone,country,city,segment,signup_date,lifetime_value,updated_at
+CUST-000001,Ananya Patel,ananya.patel1@example.com,+136986770879,AU,Sydney,Corporate,2024-01-19,18874.13,2026-08-17 00:00:00
+CUST-000002,Lucas Chen,lucas.chen2@example.com,+61194576436,DE,Berlin,Home Office,2024-08-28,12983.32,2026-08-17 00:00:00
+CUST-000003,Vikram Iyer,not-an-email,+792368076065,GB,London,Corporate,2023-09-05,14843.12,2026-08-17 00:00:00
+CUST-000004,James Johnson,james.johnson4@example.com,+36877052039,CA,Vancouver,Consumer,2025-04-10,7691.95,2026-08-17 00:00:00
+CUST-000005,Olivia Rao,olivia.rao5@example.com,+843480920839,IN,Hyderabad,Consumer,2024-09-10,4262.8,2026-08-17 00:00:00
+CUST-000006,Vikram Okafor,vikram.okafor6@example.com,+882040226318,INDIA,Unknown,Consumer,2022-02-08,11025.96,2026-08-17 00:00:00
+CUST-000007,Vikram Smith,vikram.smith7@example.com,+896170675398,AE,Dubai,SMB,2022-10-10,12967.08,2026-08-17 00:00:00
+CUST-000008,Olivia Chen,olivia.chen8@example.com,+496038780151,SG,Singapore,Corporate,2023-12-27,16896.71,2026-08-17 00:00:00
+CUST-000009,Olivia Nair,olivia.nair9@example.com,+322282044148,AU,Sydney,Consumer,2023-03-01,17256.0,2026-08-17 00:00:00
+CUST-000010,Wei Johnson,wei.johnson10@example.com,+458394492221,CA,Toronto,SMB,2026-09-23,16915.56,2026-08-17 00:00:00
+CUST-000011,Lucas Okafor,lucas.okafor11@example.com,+454455798713,AE,Dubai,Home Office,2023-08-13,23882.84,2026-08-17 00:00:00
+CUST-000012,Fatima Johnson,fatima.johnson12@example.com,+843057629778,US,Boston,Consumer,2023-07-10,23325.6,2026-08-17 00:00:00
+CUST-000013,Vikram Reddy,vikram.reddy13@example.com,+792027708670,AU,Sydney,Consumer,2023-04-08,15948.61,2026-08-17 00:00:00
+CUST-000014,Ananya Smith,ananya.smith14@example.com,+438375996697,IN,Chennai,Consumer,2022-01-11,24112.97,2026-08-17 00:00:00
+CUST-000015,Emma Muller,emma.muller15@example.com,+619434946584,GB,Bristol,Corporate,2022-05-02,22698.42,2026-08-17 00:00:00
+CUST-000016,Priya Chen,priya.chen16@example.com,+955022964382,US,Austin,Corporate,2022-12-27,23348.07,2026-08-17 00:00:00
+CUST-000017,Lucas Kim,lucas.kim17@example.com,+641160916026,IN,Hyderabad,Home Office,2022-08-08,23211.37,2026-08-17 00:00:00
+CUST-000018,James Johnson,james.johnson18@example.com,+835031086659,SG,Singapore,Consumer,2023-01-30,20220.35,2026-08-17 00:00:00
+CUST-000019,Meera Garcia,meera.garcia19@example.com,+598079331637,SG,Singapore,Home Office,2023-11-22,19769.19,2026-08-17 00:00:00
+CUST-000020,Meera Al-Rashid,meera.al-rashid20@example.com,+829147736635,DE,Berlin,Home Office,2023-11-03,2168.44,2026-08-17 00:00:00
+CUST-000021,Meera Patel,meera.patel21@example.com,+622065354117,US,Austin,Enterprise,2023-04-28,11168.39,2026-08-17 00:00:00
+CUST-000022,Wei Rao,wei.rao22@example.com,+755344083406,AU,Sydney,Enterprise,2022-05-08,16694.65,2026-08-17 00:00:00
+CUST-000023,James Patel,james.patel23@example.com,+528601409432,CA,Toronto,Consumer,2024-01-23,15365.64,2026-08-17 00:00:00
+CUST-000024,Vikram Johnson,vikram.johnson24@example.com,+206899673770,DE,Berlin,Enterprise,2024-08-22,18933.76,2026-08-17 00:00:00
+CUST-000025,Priya Muller,priya.muller25@example.com,+974381731378,DE,Munich,Corporate,2024-12-17,17594.15,2026-08-17 00:00:00
+CUST-000026,Ananya Sharma,ananya.sharma26@example.com,+713304937838,US,Seattle,Corporate,2024-12-01,11046.01,2026-08-17 00:00:00
+CUST-000027,Olivia Reddy,olivia.reddy27@example.com,+665533921266,DE,Berlin,Consumer,2024-04-30,11419.96,2026-08-17 00:00:00
+CUST-000028,Noah Muller,noah.muller28@example.com,+404106464319,IN,Rajahmundry,Enterprise,2022-01-07,18645.11,2026-08-17 00:00:00
+CUST-000029,Diya Smith,diya.smith29@example.com,+454008130163,US,Austin,Home Office,2024-08-24,793.37,2026-08-17 00:00:00
+CUST-000030,Meera Kim,meera.kim30@example.com,+187100408092,AE,Dubai,SMB,2024-02-13,9391.14,2026-08-17 00:00:00
+CUST-000031,Fatima Reddy,fatima.reddy31@example.com,+235203589186,GB,Manchester,Corporate,2023-09-04,11575.1,2026-08-17 00:00:00
+CUST-000032,Lucas Okafor,lucas.okafor32@example.com,+306358023411,AE,Abu Dhabi,SMB,2023-07-19,4712.01,2026-08-17 00:00:00
+CUST-000033,Diya Kim,diya.kim33@example.com,+851067198189,US,Austin,Corporate,2022-07-26,14848.6,2026-08-17 00:00:00
+CUST-000034,Diya Nair,diya.nair34@example.com,+955484962610,CA,Toronto,SMB,2025-01-10,5431.73,2026-08-17 00:00:00
+CUST-000035,Vikram Chen,vikram.chen35@example.com,+387769342363,IN,Hyderabad,Home Office,2023-10-19,5922.6,2026-08-17 00:00:00
+CUST-000036,Priya Smith,priya.smith36@example.com,+392181777110,GB,London,SMB,2022-12-25,15649.83,2026-08-17 00:00:00
+CUST-000037,Olivia Sharma,olivia.sharma37@example.com,+458178361487,AE,Dubai,Enterprise,2024-04-16,3730.44,2026-08-17 00:00:00
+CUST-000038,Meera Kim,meera.kim38@example.com,+693033747850,AE,Abu Dhabi,SMB,2022-10-23,20144.4,2026-08-17 00:00:00
+CUST-000039,Emma Smith,emma.smith39@example.com,+723276297510,IN,Chennai,Home Office,2023-06-07,5083.42,2026-08-17 00:00:00
+CUST-000040,Noah Okafor,noah.okafor40@example.com,+489987064419,US,Seattle,Consumer,2023-07-04,9429.2,2026-08-17 00:00:00
