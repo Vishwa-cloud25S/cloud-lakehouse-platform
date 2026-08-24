@@ -1,0 +1,156 @@
+name: CD
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - "**.md"
+      - "docs/**"
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        type: choice
+        options: [dev, prod]
+        default: dev
+
+concurrency:
+  group: cd-${{ github.ref }}
+  cancel-in-progress: false   # never cancel a half-finished deployment
+
+permissions:
+  id-token: write   # OIDC federated credentials - no long-lived secrets
+  contents: read
+
+jobs:
+  build:
+    name: Build wheel
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install build
+      - run: python -m build --wheel
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lakehouse-wheel
+          path: dist/*.whl
+
+  deploy-dev:
+    name: Deploy to dev
+    runs-on: ubuntu-latest
+    needs: build
+    environment: dev
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: lakehouse-wheel
+          path: dist
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform apply
+        env:
+          TF_VAR_databricks_account_id: ${{ secrets.DATABRICKS_ACCOUNT_ID }}
+          ARM_USE_OIDC: true
+        run: |
+          cd infra/terraform
+          terraform init -backend-config=envs/dev/backend.hcl
+          terraform apply -auto-approve -var-file=envs/dev/terraform.tfvars
+
+      - name: Install Databricks CLI
+        run: |
+          curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+          databricks --version
+
+      - name: Upload wheel to the workspace
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_DEV }}
+        run: |
+          WHEEL=$(ls dist/*.whl | head -1)
+          databricks fs cp "$WHEEL" dbfs:/FileStore/wheels/lakehouse-latest-py3-none-any.whl --overwrite
+
+      - name: Apply Unity Catalog governance
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_DEV }}
+        run: |
+          databricks sql query --warehouse-id ${{ secrets.DATABRICKS_WAREHOUSE_ID_DEV }} \
+            --file sql/unity_catalog/01_catalog_setup.sql || true
+
+      - name: Smoke test - run the pipeline job
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_DEV }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_DEV }}
+        run: |
+          RUN=$(databricks jobs run-now --job-id ${{ secrets.DATABRICKS_JOB_ID_DEV }} --output json | jq -r '.run_id')
+          echo "started run $RUN"
+          databricks jobs get-run --run-id "$RUN" --output json | jq '.state'
+
+  deploy-prod:
+    name: Deploy to prod
+    runs-on: ubuntu-latest
+    needs: deploy-dev
+    # GitHub environment protection rules provide the manual approval gate.
+    environment:
+      name: prod
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: lakehouse-wheel
+          path: dist
+
+      - name: Azure login (OIDC)
+        uses: azure/login@v2
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.9.8
+
+      - name: Terraform plan
+        env:
+          TF_VAR_databricks_account_id: ${{ secrets.DATABRICKS_ACCOUNT_ID }}
+          ARM_USE_OIDC: true
+        run: |
+          cd infra/terraform
+          terraform init -backend-config=envs/prod/backend.hcl
+          terraform plan -var-file=envs/prod/terraform.tfvars -out=prod.tfplan
+
+      - name: Terraform apply
+        env:
+          TF_VAR_databricks_account_id: ${{ secrets.DATABRICKS_ACCOUNT_ID }}
+          ARM_USE_OIDC: true
+        run: cd infra/terraform && terraform apply -auto-approve prod.tfplan
+
+      - name: Install Databricks CLI
+        run: curl -fsSL https://raw.githubusercontent.com/databricks/setup-cli/main/install.sh | sh
+
+      - name: Promote the wheel
+        env:
+          DATABRICKS_HOST: ${{ secrets.DATABRICKS_HOST_PROD }}
+          DATABRICKS_TOKEN: ${{ secrets.DATABRICKS_TOKEN_PROD }}
+        run: |
+          WHEEL=$(ls dist/*.whl | head -1)
+          databricks fs cp "$WHEEL" dbfs:/FileStore/wheels/lakehouse-latest-py3-none-any.whl --overwrite

@@ -1,0 +1,31 @@
+name: Bug report
+description: Something in the pipeline behaves incorrectly
+labels: [bug]
+body:
+  - type: dropdown
+    id: layer
+    attributes:
+      label: Affected layer
+      options: [bronze, silver, gold, infrastructure, ci-cd, governance]
+    validations:
+      required: true
+  - type: input
+    id: dataset
+    attributes:
+      label: Dataset
+      placeholder: orders
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+  - type: input
+    id: run_id
+    attributes:
+      label: run_id from the JSON logs
+      placeholder: 94c4770ea220

@@ -1,0 +1,30 @@
+name: Onboard a new dataset
+description: Request a new source into the lakehouse
+labels: [enhancement, dataset]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Dataset name (snake_case)
+    validations:
+      required: true
+  - type: input
+    id: pk
+    attributes:
+      label: Primary key column(s)
+    validations:
+      required: true
+  - type: input
+    id: watermark
+    attributes:
+      label: Watermark column
+      value: updated_at
+  - type: dropdown
+    id: scd
+    attributes:
+      label: History requirement
+      options: ["type1 (overwrite)", "type2 (track history)"]
+  - type: textarea
+    id: quality
+    attributes:
+      label: Quality rules that must hold
