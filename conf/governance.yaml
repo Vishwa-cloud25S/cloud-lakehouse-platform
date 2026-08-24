@@ -1,0 +1,101 @@
+# Declarative Unity Catalog governance model.
+# Applied by `lakehouse.governance.CatalogManager.apply_governance_file()` and
+# mirrored in Terraform (infra/terraform/modules/unity_catalog) for the objects
+# that must exist before any job runs.
+
+principals:
+  admins: data_platform_admins
+  engineers: data_engineers
+  analysts: data_analysts
+  bi: bi_service_principal
+  pii_readers: data_pii_readers
+
+schemas:
+  bronze:
+    tags: { layer: bronze, data_quality: raw, retention: 90d }
+    grants:
+      data_platform_admins: [ALL PRIVILEGES]
+      data_engineers: [USE SCHEMA, SELECT, MODIFY, CREATE TABLE]
+      # Analysts deliberately have no Bronze access: unvalidated data must not
+      # reach a dashboard.
+  silver:
+    tags: { layer: silver, data_quality: validated, retention: 730d }
+    grants:
+      data_platform_admins: [ALL PRIVILEGES]
+      data_engineers: [USE SCHEMA, SELECT, MODIFY, CREATE TABLE]
+      data_analysts: [USE SCHEMA, SELECT]
+  gold:
+    tags: { layer: gold, data_quality: certified, retention: 2555d }
+    grants:
+      data_platform_admins: [ALL PRIVILEGES]
+      data_engineers: [USE SCHEMA, SELECT, MODIFY, CREATE TABLE]
+      data_analysts: [USE SCHEMA, SELECT]
+      bi_service_principal: [USE SCHEMA, SELECT]
+  ops:
+    tags: { layer: ops, data_quality: internal }
+    grants:
+      data_platform_admins: [ALL PRIVILEGES]
+      data_engineers: [USE SCHEMA, SELECT, MODIFY, CREATE TABLE]
+
+tables:
+
+  silver.silver_customers:
+    tags: { domain: crm, contains_pii: "true", classification: confidential }
+    column_tags:
+      email:     { pii: "true", pii_type: email }
+      phone:     { pii: "true", pii_type: phone }
+      full_name: { pii: "true", pii_type: name }
+    column_comments:
+      customer_id: Business key from the CRM source system.
+      row_hash: SHA-256 of tracked attributes; drives SCD2 change detection.
+      is_current: TRUE for the active version of this customer.
+      effective_from: Inclusive start of this version's validity window.
+      effective_to: Exclusive end of validity; NULL for the current version.
+    masks:
+      email:     governance.mask_email
+      phone:     governance.mask_phone
+      full_name: governance.mask_name
+    grants:
+      data_analysts: [SELECT]
+
+  silver.silver_orders:
+    tags: { domain: sales, contains_pii: "false", classification: internal }
+    column_comments:
+      order_id: Business key, format ORD-########.
+      net_amount: gross_amount minus discount_amount; the single revenue definition.
+      row_hash: SHA-256 of business columns for change detection.
+    grants:
+      data_analysts: [SELECT]
+
+  gold.fact_orders:
+    tags: { domain: sales, certified: "true", refresh: daily, sla_hours: "6" }
+    column_comments:
+      customer_version_key: FK to the point-in-time-correct dim_customer version.
+      gross_profit: net_amount minus cogs_amount.
+    grants:
+      data_analysts: [SELECT]
+      bi_service_principal: [SELECT]
+
+  gold.dim_customer:
+    tags: { domain: crm, certified: "true", scd: type2, contains_pii: "true" }
+    column_tags:
+      email:     { pii: "true", pii_type: email }
+      full_name: { pii: "true", pii_type: name }
+    masks:
+      email:     governance.mask_email
+      full_name: governance.mask_name
+    grants:
+      data_analysts: [SELECT]
+      bi_service_principal: [SELECT]
+
+  gold.agg_daily_sales:
+    tags: { domain: sales, certified: "true", refresh: daily, bi_ready: "true" }
+    grants:
+      data_analysts: [SELECT]
+      bi_service_principal: [SELECT]
+
+# Row-level security: analysts see only their region unless in data_global_readers.
+row_filters:
+  gold.dim_customer:
+    function: governance.row_filter_country
+    columns: [country]
