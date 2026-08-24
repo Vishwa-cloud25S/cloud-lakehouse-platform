@@ -1,0 +1,56 @@
+# Dataset contracts. Adding a new source = adding a block here; no Python changes.
+datasets:
+
+  orders:
+    source_format: csv
+    source_path: data/samples/orders
+    primary_keys: [order_id]
+    watermark_column: updated_at
+    partition_by: [order_date]        # low-cardinality date partition, ~1 file/day/batch
+    zorder_by: [customer_id, order_id]
+    scd: type1
+    write_mode: merge                 # idempotent upsert -> safe re-runs
+    schema_evolution: additive        # new source columns are absorbed automatically
+    quality_suite: orders
+    quarantine_on_fail: true
+    pii_columns: [customer_email]
+    expected_freshness_hours: 6
+    tags:
+      domain: sales
+      classification: internal
+
+  customers:
+    source_format: csv
+    source_path: data/samples/customers
+    primary_keys: [customer_id]
+    watermark_column: updated_at
+    partition_by: []                  # small dimension - partitioning would hurt
+    zorder_by: [customer_id]
+    scd: type2                        # track address/segment history for point-in-time joins
+    write_mode: merge
+    schema_evolution: additive
+    quality_suite: customers
+    quarantine_on_fail: true
+    pii_columns: [email, phone, full_name]
+    expected_freshness_hours: 24
+    tags:
+      domain: crm
+      classification: confidential
+
+  products:
+    source_format: csv
+    source_path: data/samples/products
+    primary_keys: [product_id]
+    watermark_column: updated_at
+    partition_by: []
+    zorder_by: [product_id, category]
+    scd: type1
+    write_mode: merge
+    schema_evolution: additive
+    quality_suite: products
+    quarantine_on_fail: false
+    pii_columns: []
+    expected_freshness_hours: 168
+    tags:
+      domain: catalog
+      classification: public

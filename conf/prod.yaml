@@ -1,0 +1,26 @@
+env: prod
+catalog: lakehouse_prod
+schemas:
+  bronze: bronze
+  silver: silver
+  gold: gold
+storage:
+  account: ${STORAGE_ACCOUNT:-stlakehouseprod}
+  container: lakehouse
+  checkpoint_path: abfss://lakehouse@${STORAGE_ACCOUNT:-stlakehouseprod}.dfs.core.windows.net/_checkpoints
+  quarantine_path: abfss://lakehouse@${STORAGE_ACCOUNT:-stlakehouseprod}.dfs.core.windows.net/_quarantine
+spark:
+  shuffle_partitions: 200
+  auto_optimize: true
+maintenance:
+  vacuum_retention_hours: 168
+  retention_check: true
+monitoring:
+  alert_emails:
+    - data-eng-oncall@example.com
+    - analytics-leads@example.com
+tags:
+  environment: prod
+  owner: data-engineering
+  cost_center: analytics
+  criticality: tier-1

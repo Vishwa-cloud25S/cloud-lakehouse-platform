@@ -1,0 +1,24 @@
+# Local laptop / CI profile - no Azure, no Unity Catalog, plain Delta on the filesystem.
+env: local
+catalog: lakehouse_local
+schemas:
+  bronze: bronze
+  silver: silver
+  gold: gold
+storage:
+  account: ""
+  container: ""
+  root_path: ./data/lake
+  checkpoint_path: ./data/_checkpoints
+  quarantine_path: ./data/lake/_quarantine
+spark:
+  shuffle_partitions: 4        # tiny data -> tiny shuffle; avoids 200 empty tasks
+  auto_optimize: false
+maintenance:
+  vacuum_retention_hours: 0
+  retention_check: false       # allows VACUUM RETAIN 0 in tests only
+monitoring:
+  alert_emails: []
+tags:
+  environment: local
+  owner: data-engineering
