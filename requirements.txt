@@ -3,7 +3,7 @@
 # pyspark and delta-spark are a matched pair: delta-spark 3.2.x requires
 # pyspark >=3.5.0,<3.6.0, and this combination mirrors Databricks Runtime
 # 15.4 LTS. Upgrade both together, alongside a DBR upgrade - never one alone.
-pyspark==3.5.1
+pyspark==3.5.9
 delta-spark==3.2.0
 
 pyyaml==6.0.2
