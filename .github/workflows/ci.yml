@@ -115,8 +115,13 @@ jobs:
 
       - run: pip install -r requirements-dev.txt
 
-      - name: Generate sample data
-        run: python scripts/generate_sample_data.py --out data/samples --days 7 --evolve
+      - name: Regenerate sample data
+        # Start from a clean directory and use the same parameters as `make seed`,
+        # so the run reproduces exactly the figures documented in the README
+        # instead of layering new files on top of the committed samples.
+        run: |
+          rm -rf data/samples
+          python scripts/generate_sample_data.py --out data/samples --days 14 --evolve
 
       - name: Run the full pipeline on Delta
         env:
