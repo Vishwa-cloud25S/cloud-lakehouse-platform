@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# Spark / Delta local artifacts
+spark-warehouse/
+metastore_db/
+derby.log
+_delta_log_local/
+tmp/
+*.crc
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars.secret
+override.tf
+override.tf.json
+.terraformrc
+terraform.rc
+.terraform.lock.hcl
+
+# Secrets / local env
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.databrickscfg
+
+# Editors / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local data (samples are committed explicitly)
+data/lake/
+data/_checkpoints/
+!data/samples/

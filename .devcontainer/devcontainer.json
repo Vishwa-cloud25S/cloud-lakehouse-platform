@@ -1,0 +1,28 @@
+{
+  "name": "cloud-lakehouse-platform",
+  "image": "mcr.microsoft.com/devcontainers/python:3.10",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": { "version": "17" },
+    "ghcr.io/devcontainers/features/terraform:1": { "version": "1.9.8" },
+    "ghcr.io/devcontainers/features/azure-cli:1": {}
+  },
+  "postCreateCommand": "pip install -r requirements-dev.txt && pre-commit install",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "hashicorp.terraform",
+        "redhat.vscode-yaml"
+      ],
+      "settings": {
+        "python.testing.pytestEnabled": true,
+        "editor.formatOnSave": true
+      }
+    }
+  },
+  "remoteEnv": {
+    "SPARK_LOCAL_IP": "127.0.0.1",
+    "PYTHONPATH": "${containerWorkspaceFolder}/src"
+  }
+}
