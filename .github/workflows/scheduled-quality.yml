@@ -9,6 +9,8 @@ jobs:
   quality-report:
     name: Query DQ results and fail on SLA breach
     runs-on: ubuntu-latest
+    # Only meaningful against a live warehouse.
+    if: vars.DATABRICKS_CONFIGURED == 'true'
     steps:
       - uses: actions/checkout@v4
 
