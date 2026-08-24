@@ -1,0 +1,33 @@
+suite: products
+dataset: products
+description: Quality contract for the product catalogue dimension.
+
+expectations:
+
+  product_id_not_null:
+    expr: "product_id IS NOT NULL AND trim(product_id) <> ''"
+    action: fail
+    description: Business key.
+
+  product_id_format:
+    expr: "product_id RLIKE '^SKU-[0-9]{5}$'"
+    action: quarantine
+
+  name_present:
+    expr: "product_name IS NOT NULL AND length(trim(product_name)) > 1"
+    action: quarantine
+
+  category_present:
+    expr: "category IS NOT NULL"
+    action: quarantine
+    description: Category drives Gold aggregation grain.
+
+  list_price_non_negative:
+    expr: "list_price >= 0"
+    action: quarantine
+
+  cost_not_above_price:
+    expr: "unit_cost IS NULL OR list_price IS NULL OR unit_cost <= list_price * 1.5"
+    action: warn
+    tolerance: 0.05
+    description: Loss-leaders exist, but 50% above list signals a data error.

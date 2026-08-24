@@ -1,0 +1,64 @@
+suite: orders
+dataset: orders
+description: >
+  Quality contract for the orders fact stream. Anything that would corrupt revenue
+  reporting is `fail`; recoverable row-level problems are `quarantine`.
+
+expectations:
+
+  order_id_not_null:
+    expr: "order_id IS NOT NULL AND trim(order_id) <> ''"
+    action: fail
+    description: Primary key must exist - a null PK breaks MERGE idempotency.
+
+  order_id_unique_format:
+    expr: "order_id RLIKE '^ORD-[0-9]{8}$'"
+    action: quarantine
+    description: Upstream contract is ORD- followed by 8 digits.
+
+  customer_id_not_null:
+    expr: "customer_id IS NOT NULL"
+    action: quarantine
+    description: Orphan orders cannot join the customer dimension.
+
+  quantity_positive:
+    expr: "quantity > 0"
+    action: quarantine
+    description: Zero/negative quantity indicates a cancelled line sent in error.
+
+  unit_price_non_negative:
+    expr: "unit_price >= 0"
+    action: quarantine
+    description: Negative price would silently invert revenue.
+
+  unit_price_sane:
+    expr: "unit_price < 1000000"
+    action: warn
+    tolerance: 0.01
+    description: Catches unit-of-currency mistakes (paise vs rupees).
+
+  order_date_valid:
+    expr: "order_date IS NOT NULL AND order_date >= date'2015-01-01' AND order_date <= current_date() + interval 1 day"
+    action: quarantine
+    description: Guards against epoch-zero and far-future parse failures.
+
+  status_in_domain:
+    expr: "lower(status) IN ('pending','confirmed','shipped','delivered','cancelled','returned')"
+    action: quarantine
+    description: Enumeration drift from the source system.
+
+  currency_iso:
+    expr: "currency RLIKE '^[A-Z]{3}$'"
+    action: quarantine
+    description: ISO-4217 three-letter code.
+
+  email_wellformed:
+    expr: "customer_email IS NULL OR customer_email RLIKE '^[^@\\\\s]+@[^@\\\\s]+\\\\.[^@\\\\s]+$'"
+    action: warn
+    tolerance: 0.02
+    description: Soft rule - bad emails do not block revenue reporting.
+
+  no_corrupt_record:
+    expr: "_corrupt_record IS NULL"
+    action: quarantine
+    description: PERMISSIVE CSV parse failures surface here.

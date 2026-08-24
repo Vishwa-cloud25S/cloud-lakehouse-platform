@@ -1,0 +1,41 @@
+suite: customers
+dataset: customers
+description: Quality contract for the customer master (SCD2 dimension).
+
+expectations:
+
+  customer_id_not_null:
+    expr: "customer_id IS NOT NULL AND trim(customer_id) <> ''"
+    action: fail
+    description: Business key of the dimension.
+
+  customer_id_format:
+    expr: "customer_id RLIKE '^CUST-[0-9]{6}$'"
+    action: quarantine
+    description: Upstream contract.
+
+  email_present_and_wellformed:
+    expr: "email IS NOT NULL AND email RLIKE '^[^@\\\\s]+@[^@\\\\s]+\\\\.[^@\\\\s]+$'"
+    action: quarantine
+    description: Email is the marketing join key; malformed values are useless.
+
+  country_iso2:
+    expr: "country RLIKE '^[A-Z]{2}$'"
+    action: quarantine
+    description: ISO-3166-1 alpha-2.
+
+  segment_in_domain:
+    expr: "lower(segment) IN ('consumer','corporate','home office','smb','enterprise')"
+    action: warn
+    tolerance: 0.05
+    description: New segments appear before the dimension is updated; warn only.
+
+  signup_date_not_future:
+    expr: "signup_date IS NULL OR signup_date <= current_date()"
+    action: quarantine
+    description: Future signup implies a clock/parse problem.
+
+  updated_at_present:
+    expr: "updated_at IS NOT NULL"
+    action: fail
+    description: SCD2 effective dating depends on the source timestamp.
